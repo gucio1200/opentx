@@ -55,6 +55,8 @@ QString CustomFunctionData::funcToString(const ModelData * model) const
     return tr("Trainer THR");
   else if (func == FuncTrainerAIL)
     return tr("Trainer AIL");
+  else if (func == FuncTrainerChannels)
+    return tr("Trainer Channels");
   else if (func == FuncInstantTrim)
     return tr("Instant Trim");
   else if (func == FuncPlaySound)
@@ -206,8 +208,17 @@ QString CustomFunctionData::paramToString(const ModelData * model) const
       case FUNC_ADJUST_GVAR_GVAR:
         return RawSource(param).toString();
       case FUNC_ADJUST_GVAR_INCDEC:
-        if (param==0) return tr("Decr:") + " -1";
-        else          return tr("Incr:") + " +1";
+        float val;
+        QString unit;
+        if (IS_ARM(getCurrentBoard())) {
+          val = param * model->gvarData[func - FuncAdjustGV1].multiplierGet();
+          unit = model->gvarData[func - FuncAdjustGV1].unitToString();
+        }
+        else {
+          val = param;
+          unit = "";
+        }
+        return QString("Increment: %1%2").arg(val).arg(unit);
     }
   }
   return "";

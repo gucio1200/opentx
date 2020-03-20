@@ -37,6 +37,7 @@ AppPreferencesDialog::AppPreferencesDialog(QWidget * parent) :
 {
   ui->setupUi(this);
   setWindowIcon(CompanionIcon("apppreferences.png"));
+  ui->tabWidget->setCurrentIndex(0);
 
   initSettings();
   connect(ui->boardCB, SIGNAL(currentIndexChanged(int)), this, SLOT(onBaseFirmwareChanged()));
@@ -188,7 +189,7 @@ void AppPreferencesDialog::initSettings()
   ui->backLightColor->setCurrentIndex(g.backLight());
   ui->volumeGain->setValue(profile.volumeGain() / 10.0);
 
-  if (IS_TARANIS(getCurrentBoard())) {
+  if (IS_HORUS_OR_TARANIS(getCurrentBoard())) {
     ui->backLightColor->setEnabled(false);
   }
 
@@ -540,7 +541,7 @@ void AppPreferencesDialog::populateFirmwareOptions(const Firmware * firmware)
 
   // TODO: Remove once splash replacement supported on Horus
   // NOTE: 480x272 image causes issues on screens <800px high, needs a solution like scrolling once reinstated
-  if (IS_HORUS(baseFw->getBoard())) {
+  if (IS_FAMILY_HORUS_OR_T16(baseFw->getBoard())) {
     ui->widget_splashImage->hide();
     ui->SplashFileName->setText("");
   }
