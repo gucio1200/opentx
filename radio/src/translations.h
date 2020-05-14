@@ -169,6 +169,7 @@ extern const char STR_VSENSORTYPES[];
 extern const char STR_VFORMULAS[];
 extern const char STR_VPREC[];
 extern const char STR_VCELLINDEX[];
+extern const char STR_TOUCH_PANEL[];
 
 #if defined(BLUETOOTH)
 extern const char STR_BLUETOOTH[];
@@ -188,6 +189,7 @@ extern const char STR_EXIT[];
 
 #if !defined(PCBHORUS)
 extern const char STR_MENUWHENDONE[];
+extern const char STR_NO_TELEMETRY_SCREENS[];
 #endif
 
 extern const char STR_FREE[];
@@ -393,6 +395,7 @@ extern const char STR_DISABLE_CH_MAP[];
 extern const char STR_DISABLE_TELEM[];
 extern const char STR_MULTI_DSM_AUTODTECT[];
 extern const char STR_MULTI_LOWPOWER[];
+extern const char STR_MULTI_LNA_DISABLE[];
 extern const char STR_MODULE_NO_SERIAL_MODE[];
 extern const char STR_MODULE_NO_INPUT[];
 extern const char STR_MODULE_WAITFORBIND[];
@@ -494,6 +497,8 @@ extern const char STR_RESET_BTN[];
 extern const char STR_DEBUG[];
 extern const char STR_KEYS_BTN[];
 extern const char STR_ANALOGS_BTN[];
+extern const char STR_TOUCH_NOTFOUND[];
+extern const char STR_TOUCH_EXIT[];
 extern const char STR_CALIBRATION[];
 extern const char STR_NO_TOOLS[];
 extern const char STR_NORMAL[];
@@ -592,6 +597,22 @@ extern const char STR_PLAY_FILE[];
 extern const char STR_ASSIGN_BITMAP[];
 #if defined(PCBHORUS)
 extern const char STR_ASSIGN_SPLASH[];
+extern const char STR_FIRST_CHANNEL[];
+extern const char STR_FILL_BACKGROUND[];
+extern const char STR_BG_COLOR[];
+extern const char STR_SLIDERS_TRIMS[];
+extern const char STR_SLIDERS[];
+extern const char STR_FLIGHT_MODE[];
+extern const char STR_INVALID_FILE[];
+extern const char STR_TIMER_SOURCE[];
+extern const char STR_TEXT_SIZE[];
+extern const char STR_SIZE[];
+extern const char STR_SHADOW[];
+extern const char STR_TEXT[];
+extern const char STR_COLOR[];
+extern const char STR_MAIN_VIEW_X[];
+extern const char STR_PANEL1_BACKGROUND[];
+extern const char STR_PANEL2_BACKGROUND[];
 #endif
 extern const char STR_EXECUTE_FILE[];
 extern const char STR_DELETE_FILE[];
